@@ -23,11 +23,11 @@ def save_scores(scores: dict) -> None:
 
 def display_scores(scores: dict, colour_fn) -> None:
     from game import BOLD, GREEN, YELLOW, CYAN, RESET
-    print(f"\n{BOLD}{'─'*28}{RESET}")
-    print(f"  {BOLD}📊 Scoreboard{RESET}")
-    print(f"{'─'*28}")
+    print(f"\n{BOLD}{'='*28}{RESET}")
+    print(f"  {BOLD}>> Scoreboard{RESET}")
+    print(f"{'='*28}")
     for name, score in scores.items():
-        bar = "█" * score
+        bar = "#" * score
         if name == "Draws":
             print(f"  {YELLOW}{name:<12}{RESET} {score:>2}  {YELLOW}{bar}{RESET}")
         elif name == "Computer":

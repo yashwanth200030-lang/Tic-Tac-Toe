@@ -4,6 +4,11 @@ main.py – Entry point. Handles menus, game loop, and player turns.
 Run:
     python main.py
 """
+import sys
+import io
+# Force UTF-8 output on Windows so Unicode characters print correctly
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 import os
 import time
@@ -23,10 +28,10 @@ def clear() -> None:
 
 def banner() -> None:
     clear()
-    print(colour(r"""
-  ╔════════════════════════════╗
-  ║   🎮  TIC  TAC  TOE  🎮   ║
-  ╚════════════════════════════╝
+    print(colour("""
+  +=========================+
+  |   >>  TIC  TAC  TOE  << |
+  +=========================+
 """, BOLD + CYAN))
 
 
